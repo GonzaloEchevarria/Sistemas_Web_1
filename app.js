@@ -5,6 +5,9 @@ let cookieParser = require('cookie-parser');
 let logger = require('morgan');
 const session = require('express-session');
 
+
+
+
 let indexRouter = require('./routes/index');
 let loginRouter = require('./routes/login');
 let restrictedRouter = require('./routes/restricted');
@@ -61,6 +64,9 @@ function restrict(req, res, next){
 app.use(function(req, res, next) {
   next(createError(404));
 });
+
+
+
 
 // error handler
 app.use(function(err, req, res, next) {

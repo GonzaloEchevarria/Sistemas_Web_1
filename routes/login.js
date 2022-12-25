@@ -1,11 +1,13 @@
 const express = require('express');
 const router = express.Router();
 const users = require('../users');
+const db = require('../database');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
     console.log("0");
   res.render('login', { title: 'Login', user: req.session.user});
+  
 });
 
 router.post('/', function(req, res, next){
