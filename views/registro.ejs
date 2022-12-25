@@ -1,0 +1,41 @@
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <link rel="stylesheet" href="registro.css">
+    <title>Login</title>
+</head>
+<body>
+    <div class="box">
+        <form action="/registro" method="post">
+        <div class="form">
+            <h2>
+                Sign up
+            </h2>
+            <div class="inputBox">
+                <input type="text" id="user" name="user" required>
+                <span>Username</span> <i></i>
+            </div>
+            <div class="inputBox"><input type="Password" id="pass" name="pass" required>
+            <span>Password</span> <i></i>
+            </div>
+            <div class="inputBox"><input type="Repeat password" id="pass2" name="pass2" required>
+                <span>Repeat password</span> <i></i>
+                </div>
+        <div class="links">
+            <br><br>  <a href="#">Forgot Password?</a>
+
+            <a href="/">Sign in</a>
+        </div>
+        <br>
+        <input type="submit" value="Sign up" class="c">
+        </div></form>
+    </div>
+</body>
+
+
+
+<%- include("footer", {}) %>
+
+
