@@ -1,5 +1,4 @@
 const sqlite3 = require('sqlite3').verbose();
-
 const db = new sqlite3.Database('gacetilleros.db');
 
 db.serialize(function() {
@@ -7,6 +6,9 @@ db.serialize(function() {
         console.log(rows);
       });
     });
-db.close();
 
+
+ 
+
+db.close();
 module.exports=db;
