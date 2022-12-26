@@ -22,14 +22,14 @@ router.post('/', function(req, res, next){
                 req.session.message = "Welcome!"
                 res.redirect("/restricted");
             } else {
-                req.session.error = "Incorrect user or password";
+                req.session.error="Incorrect user or password";
                 console.log("3");
                 res.redirect("/");
             }
         });
     } else {
         console.log("4");
-        req.session.error = ".";
+        req.session.error = "Incorrect user or password";
         res.redirect("/");
     }
 });
