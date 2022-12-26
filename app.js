@@ -42,7 +42,7 @@ app.use(function(req, res, next){
   next();
 });
 
-
+app.use('/home', indexRouter);
 app.use('/', loginRouter);
 app.use('/registro',registroRouter);
 app.use('/restricted', restrict, restrictedRouter);
