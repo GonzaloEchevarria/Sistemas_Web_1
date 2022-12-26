@@ -49,7 +49,7 @@ nav .start-home, a:nth-child(1):hover~.animation {
 	left: 0;
 	background-color: #1abc9c;
 }
-nav .start-about, a:nth-child(2):hover~.animation {
+nav .start-restricted, a:nth-child(2):hover~.animation {
 	width: 110px;
 	left: 100px;
 	background-color: #e74c3c;
