@@ -20,18 +20,21 @@ db.generateHash = function(pass, callback){
 
 db.register = function(username, pass, role, callback){
   db.generateHash(pass, function(err, hash){
-     db.run("INSERT INTO usuarios (username, password, rol) VALUES(?, ?, ?);",[username,hash,role],function(error) {
-      console.log(error);
+    const bbdd= new sqlite3.Database('gacetilleros.db');
+     bbdd.run("INSERT INTO usuarios (username, password, rol) VALUES(?, ?, ?);",[username,hash,role],function(error) {
+      console.log("ss"+ error);
      });
       if (callback) {
           callback();
       };
+      bbdd.close();
   });
 }
 
-db.register('user', 'user', "admin", function(){
-  console.log('User admin successfully registered');
+db.register('admin2', 'admin', "admin", function(){
+  console.log('BBDD correct');
 }); 
 
 db.close();
+
 module.exports=db;
