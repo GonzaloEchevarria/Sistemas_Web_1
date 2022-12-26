@@ -16,7 +16,6 @@ db.comparePass = function(pass, hash, callback){
 
 db.login=function(username, pass, callback){
   const bbdd= new sqlite3.Database('gacetilleros.db'); //abrir conexión
-  console.log("voy a hacer select");
   bbdd.get("SELECT password FROM usuarios WHERE username =?",[username], function(err, row) {
    let passwordBbdd= row.password;
    bbdd.close();

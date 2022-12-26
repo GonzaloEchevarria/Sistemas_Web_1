@@ -12,6 +12,7 @@ let indexRouter = require('./routes/index');
 let loginRouter = require('./routes/login');
 let restrictedRouter = require('./routes/restricted');
 let registroRouter = require('./routes/registro');
+let twitterRouter = require('./routes/twitter');
 
 let app = express();
 
@@ -44,6 +45,7 @@ app.use(function(req, res, next){
 
 app.use('/home', indexRouter);
 app.use('/', loginRouter);
+app.use('/twitter', twitterRouter);
 app.use('/registro',registroRouter);
 app.use('/restricted', restrict, restrictedRouter);
 app.use('/logout', function(req, res, next){
