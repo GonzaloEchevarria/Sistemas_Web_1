@@ -2,6 +2,8 @@ const bcrypt = require("bcrypt");
 
 const users = {};
 
+
+
 users.comparePass = function(pass, hash, callback){
     bcrypt.compare(pass, hash, callback);
 }
