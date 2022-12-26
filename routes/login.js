@@ -13,21 +13,23 @@ router.get('/', function(req, res, next) {
 router.post('/', function(req, res, next){
     let user = req.body.user;
     console.log("post");
-    if(users[user]){
-        users.comparePass(req.body.pass, users[user].hash, function(err, result){
-            if(result){
-                req.session.user = users[user];
-                req.session.message = "Welcome!"
-                res.redirect("/restricted");
-            } else {
-                req.session.error="Incorrect user or password";
-                res.redirect("/");
-            }
-        });
-    } else {
-        req.session.error = "Incorrect user or password";
-        res.redirect("/");
-    }
+    
+    db.login(req.body.user,req.body.pass,function(err, result){
+        console.log("R"+ result);
+        if(result){
+            console.log("Correct");
+            req.session.user = users[user];
+            //req.session.message = "Welcome!"
+            res.redirect("/restricted");
+        } else {
+            req.session.error="Incorrect user or password";
+            res.redirect("/");
+            console.log("Bad");
+        }
+
+    });
+    
+   
 });
 
 module.exports = router;
