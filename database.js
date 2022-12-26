@@ -19,14 +19,10 @@ db.login=function(username, pass, callback){
   console.log("voy a hacer select");
   bbdd.get("SELECT password FROM usuarios WHERE username =?",[username], function(err, row) {
    let passwordBbdd= row.password;
-   db.comparePass(pass,passwordBbdd,function(){
-    console.log('comprobado!!');
-  }); }); 
-  bbdd.close();
-
-  if (callback) {
-    callback();
-}; }
+   bbdd.close();
+   bcrypt.compare(pass, passwordBbdd, callback);
+  }); 
+   };
 
 db.login('admin','admin',function(){
   console.log('hecho');
