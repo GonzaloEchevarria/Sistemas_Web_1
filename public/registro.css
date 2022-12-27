@@ -12,7 +12,7 @@ body{
     margin-top: 100px;
 }
 .box{
-    position: relative;
+    position: absolute;
     width: 380px;
     height: 520px;
     background: #1c1c1c;
@@ -175,4 +175,20 @@ input[type="submit"]{
     border-radius: 20px;
     font-weight: 600;
     cursor: pointer;
+}
+
+.error {
+    position: relative;
+    background-color: #ed4b4b;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgb(253, 253, 253);
+    font-size: 18px;
+    color: aliceblue;
+    font-weight: bold;
+    text-align: center;
+    margin: 20px;
+    padding: 20px;
+    width: 290px;
+    height: 120px;
+    top: 520px;
 }

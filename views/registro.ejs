@@ -20,7 +20,7 @@
             <div class="inputBox"><input type="Password" id="pass" name="pass" required>
             <span>Password</span> <i></i>
             </div>
-            <div class="inputBox"><input type="Repeat password" id="pass2" name="pass2" required>
+            <div class="inputBox"><input type="Password" id="pass2" name="pass2" required>
                 <span>Repeat password</span> <i></i>
             </div>
             <div class="inputBox2">
@@ -39,7 +39,12 @@
         <br>
         <input type="submit" value="Sign up" class="c">
         </div></form>
-    </div>
+    </div><br>
+    <% if (error) { %>
+        <div class="error">
+         <p> <%- error %></p>
+        </div>
+      <% } %>
 </body>
 
 
