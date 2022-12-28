@@ -1,7 +1,6 @@
 const express = require('express');
 const db = require('../database');
 const router = express.Router();
-const users = require('../users');
 
 router.get('/', function(req, res, next) {
   res.render('registro', { title: 'Register', user: req.session.user}); /* registro y titulo */
@@ -15,15 +14,18 @@ router.post('/', function(req, res, next){
     let longitud_pass = password.length;
     let longitud_user = user.length;
 
-    if(users[user]){
+    if(db.isCreated(user, function(){
+      console.log("comprobado1");
+    }) === true){
+      console.log("entro");
         req.session.error = "This Username is in use!";
         res.redirect("/registro");
     }
     
-    else if (1 <= longitud_user && 8 <= longitud_pass && password == rep_password){ //&& users.registro_completo(user, password,rep_password)==true){
+    else if (1 <= longitud_user && 8 <= longitud_pass && password == rep_password){
         console.log("ok");
         db.register(user,password,rol, function(){
-            req.session.user = users[user]; /* para iniciar sesión automáticamente tras el registro */
+            req.session.user = user;
             //req.session.message = "Register CORRECT!";
             res.redirect("/restricted");
         });
@@ -31,7 +33,7 @@ router.post('/', function(req, res, next){
 
     else{
         req.session.error = "ERROR, Asegurese de que las contraseñas coinciden y que su longitud es igual o mayor a 8";
-        res.redirect("/registro"); /* para que salga el mensaje es importante tener una res */
+        res.redirect("/registro"); 
     }
 });
 

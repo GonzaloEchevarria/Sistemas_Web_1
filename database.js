@@ -34,7 +34,13 @@ db.generateHash = function(pass, callback){
 }
 
 db.register = function(username, pass, role, callback){
-  db.generateHash(pass, function(err, hash){
+  if (db.isCreated(username, function(){
+    console.log("comprobado");
+  })===true){
+    return false;
+  }
+  else{
+    db.generateHash(pass, function(err, hash){
     const bbdd= new sqlite3.Database('gacetilleros.db');
      bbdd.run("INSERT INTO usuarios (username, password, rol) VALUES(?, ?, ?);",[username,hash,role]);
       if (callback) {
@@ -42,7 +48,35 @@ db.register = function(username, pass, role, callback){
       };
       bbdd.close();
   });
+}}
+
+db.isCreated = function(username,callback){
+  const bbdd = new sqlite3.Database('gacetilleros.db');
+  bbdd.all("SELECT COUNT(username) FROM usuarios WHERE username =?",[username], function(err, row){
+    const { 'COUNT(username)': count } = row[0];
+    console.log(count);
+    if (callback) {
+      callback();
+  };
+  bbdd.close();
+  if (count === 1){
+    console.log("true");
+    return true;
+  }
+  else{
+    return false;
+  }
+});
+   
 }
+
+db.isCreated("hector", function(){
+  console.log('hector correct');
+ });
+
+ db.isCreated("eche", function(){
+  console.log('eche correct');
+ });
 
 //db.register('admin2', 'admin', "admin", function(){
  // console.log('BBDD correct');
