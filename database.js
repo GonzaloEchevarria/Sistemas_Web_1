@@ -3,7 +3,7 @@ const { resolveInclude } = require("ejs");
 
 const sqlite3 = require('sqlite3').verbose();
 const db = new sqlite3.Database('gacetilleros.db');
-const users={}
+
 
 
 db.serialize(function() {
