@@ -1,10 +1,30 @@
 const express = require('express');
 const db = require('../database');
+const sqlite3 = require('sqlite3').verbose();
 const router = express.Router();
+
 
 router.get('/', function(req, res, next) {
   res.render('registro', { title: 'Register', user: req.session.user}); /* registro y titulo */
 });
+
+function registroExiste(username) {
+  return new Promise((resolve, reject) => {
+    const bbdd = new sqlite3.Database('gacetilleros.db');
+
+    const sql = 'SELECT username FROM usuarios WHERE username = ?';
+    const params = [username];
+
+    bbdd.get(sql, params, (error, row) => {
+      if (error) {
+        reject(error);
+      } else {
+        resolve(!!row);
+      }
+      bbdd.close();
+    });
+  });
+}
 
 router.post('/', function(req, res, next){
     let user = req.body.user;
@@ -14,10 +34,9 @@ router.post('/', function(req, res, next){
     let longitud_pass = password.length;
     let longitud_user = user.length;
 
-    if(db.isCreated(user, function(){
-      console.log("comprobado1");
-    }) === true){
-      console.log("entro");
+    
+    if (registroExiste(user)){
+        console.log("1111111111___entro");
         req.session.error = "This Username is in use!";
         res.redirect("/registro");
     }
@@ -32,9 +51,11 @@ router.post('/', function(req, res, next){
     }
 
     else{
+        console.log("error");
         req.session.error = "ERROR, Asegurese de que las contraseñas coinciden y que su longitud es igual o mayor a 8";
         res.redirect("/registro"); 
     }
+    console.log("error2");
 });
 
 module.exports = router;

@@ -3,11 +3,15 @@ const { resolveInclude } = require("ejs");
 
 const sqlite3 = require('sqlite3').verbose();
 const db = new sqlite3.Database('gacetilleros.db');
+const users={}
+
 
 db.serialize(function() {
     db.all("SELECT * FROM usuarios", function(err, rows) {
-        console.log(rows);
+        console.log(rows)
+     
       });
+     
     });
 
 db.comparePass = function(pass, hash, callback){
@@ -27,6 +31,24 @@ db.login('admin','admin',function(){
   console.log('hecho');
 });
 
+function registroExiste(username) {
+  return new Promise((resolve, reject) => {
+    const bbdd = new sqlite3.Database('gacetilleros.db');
+
+    const sql = 'SELECT username FROM usuarios WHERE username = ?';
+    const params = [username];
+
+    bbdd.get(sql, params, (error, row) => {
+      if (error) {
+        reject(error);
+      } else {
+        resolve(!!row);
+      }
+      bbdd.close();
+    });
+  });
+}
+
 
 
 db.generateHash = function(pass, callback){
@@ -34,49 +56,25 @@ db.generateHash = function(pass, callback){
 }
 
 db.register = function(username, pass, role, callback){
-  if (db.isCreated(username, function(){
-    console.log("comprobado");
-  })===true){
+  if (users[username]){
     return false;
-  }
-  else{
+  } 
+    else{
     db.generateHash(pass, function(err, hash){
     const bbdd= new sqlite3.Database('gacetilleros.db');
      bbdd.run("INSERT INTO usuarios (username, password, rol) VALUES(?, ?, ?);",[username,hash,role]);
-      if (callback) {
+     users[username] = {username, role};
+     bbdd.close();
+     if (callback) {
           callback();
       };
-      bbdd.close();
+      
   });
 }}
 
-db.isCreated = function(username,callback){
-  const bbdd = new sqlite3.Database('gacetilleros.db');
-  bbdd.all("SELECT COUNT(username) FROM usuarios WHERE username =?",[username], function(err, row){
-    const { 'COUNT(username)': count } = row[0];
-    console.log(count);
-    if (callback) {
-      callback();
-  };
-  bbdd.close();
-  if (count === 1){
-    console.log("true");
-    return true;
-  }
-  else{
-    return false;
-  }
-});
-   
-}
 
-db.isCreated("hector", function(){
-  console.log('hector correct');
- });
 
- db.isCreated("eche", function(){
-  console.log('eche correct');
- });
+
 
 //db.register('admin2', 'admin', "admin", function(){
  // console.log('BBDD correct');
