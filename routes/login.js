@@ -2,10 +2,11 @@ const express = require('express');
 const router = express.Router();
 const db = require('../database');
 
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
     console.log("0");
-  res.render('login', { title: 'Login', user: req.session.user});
+  res.render('login', { title: 'Login', user: req.session.user,rol:req.session.rol});
   
 });
 
@@ -14,9 +15,13 @@ router.post('/', function(req, res, next){
     db.login(req.body.user,req.body.pass,function(err, result){
         if(result){
             req.session.user = user;
-            //req.session.message = "Welcome!"
-            res.redirect("/restricted");
+            db.obtenerRol(user,function(rol){
+                req.session.rol=rol;
+                res.redirect("/restricted");
+            })
+            
         } else {
+            req.session.rol=undefined;
             req.session.error="Incorrect user or password";
             res.redirect("/");
         }
