@@ -7,7 +7,7 @@ const session = require('express-session');
 
 
 
-
+let contactRouter = require('./routes/contact');
 let indexRouter = require('./routes/index');
 let loginRouter = require('./routes/login');
 let restrictedRouter = require('./routes/restricted');
@@ -44,6 +44,7 @@ app.use(function(req, res, next){
 });
 
 app.use('/home', indexRouter);
+app.use('/contacto',contactRouter);
 app.use('/', loginRouter);
 app.use('/twitter', twitterRouter);
 app.use('/registro',registroRouter);

@@ -4,18 +4,13 @@ const express = require('express');
 const router = express.Router();
 const sqlite3 = require('sqlite3').verbose();
 const db = new sqlite3.Database('gacetilleros.db');
-const array= []; //ARRAY DE USUARIOS
+
 
 
 
 db.serialize(function() {
     db.all("SELECT * FROM usuarios", function(err, rows) {
         console.log(rows);
-        //RELLENAMOS EL ARRAY DE USUARIOS
-        for (let i = 0; i < rows.length; i++) {
-          array.push(rows[i]);
-        }
-     
       });
      
     });
@@ -29,12 +24,7 @@ db.login=function(username, pass, callback){
   bbdd.get("SELECT password FROM usuarios WHERE username =?",[username], function(err, row) {
    let passwordBbdd= row.password;
    bbdd.close();
-   //ABRIMOS SESION ROL
-   //for (let i = 0; i < array.length; i++) {
-    //if (array[i].username==username){
-      //req.session.rol= array[i].rol;
-   // }
-  //}
+  
    bcrypt.compare(pass, passwordBbdd, callback); }); 
    };
 
