@@ -18,6 +18,10 @@ let registroRouter = require('./routes/registro');
 let twitterRouter = require('./routes/twitter');
 let chatRouter = require('./routes/chat');
 
+//let publicarRouter = require('./routes/publicarNoticia');
+//let modificarRouter = require('./routes/modificarNoticia');
+
+
 let app = express();
 
 ///////////////////////////
@@ -74,6 +78,10 @@ app.use('/logout', function(req, res, next){
   })
 });
 app.use('/chat',restrict,chatRouter);
+
+//app.use('/publicarNoticia',restrict,publicarRouter);
+//app.use('/modificarNoticia',restrict,modificarRouter);
+
 
 function restrict(req, res, next){
   if(req.session.user){
