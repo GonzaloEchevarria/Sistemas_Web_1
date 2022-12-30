@@ -4,7 +4,10 @@ let path = require('path');
 let cookieParser = require('cookie-parser');
 let logger = require('morgan');
 const session = require('express-session');
-
+/////////////////////////////////////
+const {Server} = require("socket.io");
+const http = require("http");
+/////////////////////////////////////
 
 
 let contactRouter = require('./routes/contact');
@@ -13,8 +16,24 @@ let loginRouter = require('./routes/login');
 let restrictedRouter = require('./routes/restricted');
 let registroRouter = require('./routes/registro');
 let twitterRouter = require('./routes/twitter');
+let chatRouter = require('./routes/chat');
 
 let app = express();
+
+///////////////////////////
+const httpServer = http.createServer(app);
+const io = new Server(httpServer);
+io.on("connection", (socket) => {
+  console.log("A new user has connected");
+  socket.on("chat", (msg) => {
+    console.log(msg);
+    io.emit("chat", msg);
+  });
+  socket.on("disconnect",()=>{
+    console.log("A user has disconnected");
+  });
+});
+//////////////////////////////
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -53,7 +72,8 @@ app.use('/logout', function(req, res, next){
   req.session.destroy(function(){
     res.redirect("/");
   })
-})
+});
+app.use('/chat',restrict,chatRouter);
 
 function restrict(req, res, next){
   if(req.session.user){
@@ -82,4 +102,4 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-module.exports = app;
+module.exports = {app, httpServer};
