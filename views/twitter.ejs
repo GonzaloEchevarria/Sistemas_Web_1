@@ -5,7 +5,20 @@
 
 <body>
     <br>
+    <h2 contenteditable spellcheck="false" id="loading" style="margin: auto;">loading</h2>
     <a class="twitter-timeline" href="https://twitter.com/okdiario?ref_src=twsrc%5Etfw"></a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </body>
     <script>document.getElementById("botonIluminado").className='animation start-twitter'</script>
+    <script>
+        // Cuando se dispare el evento de carga de la página
+        window.addEventListener('load', function() {
+          // Mostramos el div de la animación de carga
+          document.getElementById('loading').style.display = 'block';
+      
+          // Ocultamos el div de la animación de carga cuando se complete la carga de la página
+          window.setTimeout(function() {
+            document.getElementById('loading').style.display = 'none';
+          }, 2200); // 1000 milisegundos = 1 segundo
+        });
+      </script>
 

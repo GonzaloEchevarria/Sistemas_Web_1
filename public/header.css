@@ -1,13 +1,13 @@
 
 nav {
 	margin: 27px auto 0;
-	position: relative;
-	width: 900px;
+	position:relative;
+	width: 700px;
 	height: 50px;
 	background-color: #34495e;
 	border-radius: 8px;
 	font-size: 0;
-  text-align: center;
+  
 }
 nav a {
 	line-height: 50px;
@@ -70,37 +70,37 @@ nav .start-restricted, a:nth-child(2):hover~.animation {
 	left: 100px;
 	background-color: #e74c3c;
 }
-nav .start-publicar, a:nth-child(3):hover~.animation {
+nav .start-twitter, a:nth-child(3):hover~.animation {
 	width: 100px;
 	left: 200px;
 	background-color: #3498db;
 }
-nav .start-modificar, a:nth-child(4):hover~.animation {
+nav .start-chat, a:nth-child(4):hover~.animation {
 	width: 100px;
 	left: 300px;
 	background-color: #9b59b6;
 }
-nav .start-twitter, a:nth-child(5):hover~.animation {
+nav .start-contact, a:nth-child(5):hover~.animation {
 	width: 100px;
 	left: 400px;
 	background-color: #e67e22;
 }
-nav .start-chat, a:nth-child(6):hover~.animation {
+nav .start-about, a:nth-child(6):hover~.animation {
 	width: 100px;
 	left: 500px;
 	background-color: #2BD6B4;
 }
-nav .start-contact, a:nth-child(7):hover~.animation {
+nav .start-logout, a:nth-child(7):hover~.animation {
 	width: 100px;
 	left: 600px;
 	background-color: #1abc9c;
 }
-nav .start-about, a:nth-child(8):hover~.animation {
+nav .start-publicar, a:nth-child(8):hover~.animation {
 	width: 100px;
 	left: 700px;
 	background-color: #e74c3c;
 }
-nav .start-logout, a:nth-child(9):hover~.animation {
+nav .start-modificar, a:nth-child(9):hover~.animation {
 	width: 100px;
 	left: 800px;
 	background-color: #3498db;

@@ -10,18 +10,23 @@
 
 <h1>Gacetilleros</h1>
 
-<nav>
+<nav id="menu">
+	
 	<a href="/home">Tablón</a>
 	<a href="/restricted">Publicación</a>
-	<% if (rol==='redactor') { %>
-	<a href="/publicarNoticia">Publicar</a>
-	<a href="/modificarNoticia">Modificar</a>
-	<% } %>
 	<a href="/twitter">Twitter</a>
 	<a href="/chat">Chat</a>
 	<a href="/contacto">Contact</a>
 	<a href="#">About Us</a>
-	<a href="/logout">Logout</a>
+	<a href="/logout" >Logout</a>
+	<% if (rol==='redactor') { %>
+		<a href="/publicarNoticia">Publicar</a>
+		<a href="/modificarNoticia">Modificar</a>
+		<script>
+			document.getElementById("menu").style.width='900px';
+		</script>
+		<% } %>
+	
 	
     
 	<div id="botonIluminado"></div>
