@@ -1,5 +1,5 @@
 body {
-    background-color: #d1f3e7;
+    /*background-color: #d1f3e7;*/
   }
   
   #title-Tag-Line {
@@ -30,8 +30,10 @@ body {
     padding-bottom: 5px;
     left: 0;
     right: 0;
+    top: 170px;
     position: absolute;
-    border-top: 5px solid #0e3721;
+    /*border-top: 5px solid #0e3721;*/
+    border-top: 5px solid #feb200;
   /*   z-index: 1; */
     animation: bounce 1.5s infinite;
   }
@@ -62,7 +64,8 @@ body {
     color: white;
   }
   .name:hover {
-    border-bottom: 5px solid #0e3721;
+    /*border-bottom: 5px solid #0e3721;*/
+    border-bottom: 5px solid #eedb0f;
     height: 30px;
     width: 380px;
     transition: ease 0.5s;
@@ -74,7 +77,8 @@ body {
   }
   
   .email:hover {
-    border-bottom: 5px solid #0e3721;
+    /*border-bottom: 5px solid #0e3721;*/
+    border-bottom: 5px solid #eedb0f;
     height: 30px;
     width: 380px;
     transition: ease 0.5s;
@@ -87,7 +91,8 @@ body {
   }
   
   .message:hover {
-    border-bottom: 5px solid #0e3721;
+    /*border-bottom: 5px solid #0e3721;*/
+    border-bottom: 5px solid #eedb0f;
     height: 12em;
     width: 380px;
     transition: ease 0.5s;
@@ -106,7 +111,8 @@ body {
   .submit {
     width: 200px;
     color: white;
-    background-color: #0e3721;
+    /*background-color: #0e3721;*/
+    background-color: #8f6121;
     font-size: 20px;
   }
   
@@ -114,7 +120,7 @@ body {
     box-shadow: 15px 15px 15px 5px rgba(78, 72, 77, 0.219);
     transform: translateY(-3px);
     width: 300px;
-    border-top: 5px solid #0e3750;
+    /*border-top: 5px solid #0e3750;*/
     border-radius: 0%;
   }
   
