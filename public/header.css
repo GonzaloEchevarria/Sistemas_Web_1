@@ -108,9 +108,18 @@ nav .start-modificar, a:nth-child(9):hover~.animation {
 
 
 body {
+	
 	font-size: 12px;
 	font-family: sans-serif;
 	background: #2c3e50;
+}
+.fade
+{
+        opacity:0.5;
+}
+.fade:hover
+{
+        opacity:1;
 }
 
 
