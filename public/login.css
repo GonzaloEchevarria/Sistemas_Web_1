@@ -13,7 +13,8 @@ body{
 }
 .box{
     position: absolute;
-    
+    margin: auto;
+    left: 40% ;
     width: 380px;
     height: 420px;
     background: #1c1c1c;
@@ -21,11 +22,8 @@ body{
     overflow: hidden;
 }
 .box::before{
-    content: '';
-    
+    content: ''; 
     position: absolute;
-    top: -50%;
-    left: -50%;
     width: 380px;
     height: 420px;
     background: linear-gradient(0deg, transparent,#45f3ff, #45f3ff);
@@ -34,9 +32,8 @@ body{
 }
 .box::after{
     content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
+    position:absolute;
+    left: -20% !important;
     width: 380px;
     height: 420px;
     background: linear-gradient(0deg, transparent,#45f3ff, #45f3ff);
@@ -166,11 +163,12 @@ input[type="submit"]{
   }
   
 .glowing-btn {
-    position: absolute;
+    position:absolute;
     color: var(--glow-color);
     cursor: pointer;
     top: 570px;
-    padding: 0.35em 1em;
+    left: 42%;
+    padding: 0.25em 0.85em;
     border: 0.15em solid var(--glow-color);
     border-radius: 0.45em;
     background: none;

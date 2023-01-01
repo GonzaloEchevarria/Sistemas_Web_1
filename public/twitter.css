@@ -15,8 +15,9 @@
   font-size: 10px;   
   
   /* Set neon color */
-  --neon-text-color: #f40;
-  --neon-border-color: #08f;
+  --neon-text-color: #ffff00;
+  /*--neon-border-color: #08f;*/
+  --neon-border-color:  #f40;
 }
 
 body {
@@ -34,7 +35,7 @@ h2 {
   font-style: italic;
   color: #fff;
   padding: 100px 100px;
-  border: 0.4rem solid #fff;
+  border: 0.8rem solid #fff;
   border-radius: 2rem;
   text-transform: uppercase;
   animation: flicker 1.5s infinite alternate;     
