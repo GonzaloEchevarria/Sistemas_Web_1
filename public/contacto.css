@@ -21,7 +21,8 @@ body {
   /* form animation starts */
   .form {
     background: #fff;
-    box-shadow: 0 30px 60px 0 rgba(90, 116, 148, 0.4);
+    /*box-shadow: 0 30px 60px 0 rgba(90, 116, 148, 0.4);*/
+    box-shadow: 0 0 10px rgb(254, 187, 1);
     border-radius: 5px;
     max-width: 480px;
     margin-left: auto;
