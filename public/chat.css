@@ -17,6 +17,7 @@ form{
 }
 #input{
     flex-grow: 1;
+    top:240px;
 }
 #cuadro{
     border: 3px solid #F3CC07;
@@ -40,11 +41,11 @@ form{
 
 
 .wrapper {
-    top:240px;
+    
     /*height: 100vh;*/
     /*This part is important for centering*/
     margin-left: 32%;
-    position:static;
+    position:relative;
     
   }
   
@@ -89,7 +90,7 @@ form{
     box-shadow: 0 5px 15px #193047;
     border-radius: 4px;
     position:static;
-    margin:  200px;
+    margin:auto;
   }
   
   .button:hover {
