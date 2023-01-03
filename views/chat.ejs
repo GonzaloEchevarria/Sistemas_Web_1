@@ -41,9 +41,11 @@
         socket.on("chat", (msg) =>{
             const item = document.createElement("li");
             item.textContent = msg;
+            document.getElementById("cuadro").style.border="3px solid #F3CC07";
             messages.appendChild(item);
             window.scrollTo(0,document.body.scrollHeight);
         });
+        
     </script>
     <script>document.getElementById("botonIluminado").className='animation start-chat'</script>
 <%- include("footer", {}) %>

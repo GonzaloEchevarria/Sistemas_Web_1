@@ -20,11 +20,11 @@ form{
     top:240px;
 }
 #cuadro{
-    border: 3px solid #F3CC07;
+    /*border: 3px solid #F3CC07;*/
     width: 695px;
     margin: auto;
     border-radius: 7px;
-    overflow-y: scroll;
+    overflow-y:scroll;
     max-height: 500px;
 }
 #messages{
