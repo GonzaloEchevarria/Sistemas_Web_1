@@ -6,7 +6,7 @@ form{
     padding: 5px;
     position: absolute;
     display: flex;
-    bottom: 385px;
+    bottom: 100px;
     left: 450px;
     right: 340px;
     margin: 0;
@@ -24,7 +24,8 @@ form{
     width: 695px;
     margin: auto;
     border-radius: 7px;
-  
+    overflow-y: scroll;
+    max-height: 500px;
 }
 #messages{
     list-style-type: none;
