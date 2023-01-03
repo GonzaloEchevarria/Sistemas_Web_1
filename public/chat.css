@@ -91,6 +91,7 @@ form{
     border-radius: 4px;
     position:static;
     margin:auto;
+    top: 240px;
   }
   
   .button:hover {
@@ -104,7 +105,7 @@ form{
     background: #1abc9c;
     display: block;
     position: absolute;
-    padding-top: 300%;
+    /*padding-top: 300%;*/
     padding-left: 350%;
     margin-left: -20px !important;
     margin-top: -120%;
