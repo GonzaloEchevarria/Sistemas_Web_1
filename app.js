@@ -17,8 +17,7 @@ let restrictedRouter = require('./routes/restricted');
 let registroRouter = require('./routes/registro');
 let twitterRouter = require('./routes/twitter');
 let chatRouter = require('./routes/chat');
-
-//let publicarRouter = require('./routes/publicarNoticia');
+let publicarRouter = require('./routes/publicacion');
 //let modificarRouter = require('./routes/modificarNoticia');
 
 
@@ -78,8 +77,7 @@ app.use('/logout', function(req, res, next){
   })
 });
 app.use('/chat',restrict,chatRouter);
-
-//app.use('/publicarNoticia',restrict,publicarRouter);
+app.use('/publicacion',restrict,publicarRouter);
 //app.use('/modificarNoticia',restrict,modificarRouter);
 
 
