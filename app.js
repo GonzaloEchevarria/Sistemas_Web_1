@@ -77,7 +77,7 @@ app.use('/logout', function(req, res, next){
   })
 });
 app.use('/chat',restrict,chatRouter);
-app.use('/publicacion',restrict,publicarRouter);
+app.use('/publicacion',publicarRouter);
 //app.use('/modificarNoticia',restrict,modificarRouter);
 
 

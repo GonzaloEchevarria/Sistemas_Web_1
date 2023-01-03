@@ -128,9 +128,9 @@ db.allPublicaciones(function(response){
 
 
 
-db.newContacto("D","d@gmial.com","hola",function(){
-  console.log('BBDD correct');
- }); 
+//db.newContacto("D","d@gmial.com","hola",function(){
+  //console.log('BBDD correct');
+ //}); 
 
 //db.register('admin2', 'admin', "admin", function(){
  // console.log('BBDD correct');

@@ -5,7 +5,9 @@ const router = express.Router();
 
 
 router.get('/', function(req, res, next) {
-  res.render('publicar', { title: 'Publicar', user: req.session.user, rol:req.session.rol}); /* registro y titulo */
+  res.render('publicacion', { title: 'Publicar', user: req.session.user, rol:req.session.rol});
 });
+
+
 
 module.exports = router;
