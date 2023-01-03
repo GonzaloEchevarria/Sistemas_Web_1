@@ -19,9 +19,11 @@ form{
     flex-grow: 1;
 }
 #cuadro{
-    border: 2px solid #F3CC07;
-    width: 700px;
+    border: 3px solid #F3CC07;
+    width: 695px;
     margin: auto;
+    border-radius: 7px;
+  
 }
 #messages{
     list-style-type: none;
@@ -36,12 +38,14 @@ form{
     text-align: center;
 }
 
+
 .wrapper {
     top:240px;
     /*height: 100vh;*/
     /*This part is important for centering*/
-    left: 32%;
-    position: relative;
+    margin-left: 32%;
+    position:static;
+    
   }
   
   .typing-demo {
@@ -74,7 +78,6 @@ form{
     cursor: pointer;
     font-size: 20px;
     letter-spacing: 4px;
-    position: absolute;
     background-color: #9b59b6;
     border: none;
     color: white;
@@ -85,6 +88,8 @@ form{
     overflow: hidden;
     box-shadow: 0 5px 15px #193047;
     border-radius: 4px;
+    position:static;
+    margin:  200px;
   }
   
   .button:hover {
