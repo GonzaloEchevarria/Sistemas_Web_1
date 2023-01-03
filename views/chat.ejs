@@ -2,20 +2,23 @@
 <link rel="stylesheet" href="chat.css">
 
 <!-- <h1><%= title %></h1> -->
-<br>
-<br>
-<div class="wrapper">
-    <div class="typing-demo">
-      Chat
+<body>
+    <br>
+    <br>
+    <div class="wrapper">
+        <div class="typing-demo">
+        Chat
+        </div>
     </div>
-</div>
-<div id="cuadro">
-    <ul id="messages"></ul>
-</div>
-<form id="form">
-    <input id="input" style="background-color:transparent; border-color: transparent; color: white; font-family: monospace;font-size: 35px;">
-    <button class="button">Send</button>
-</form>
+    
+    <form id="form">
+        <input id="input" placeholder="Escribe aquí..." style="background-color:transparent; border-color: transparent; color: white; font-family: monospace;font-size: 35px;">
+        <button class="button">Send</button>
+        <div id="cuadro">
+            <ul id="messages"></ul>
+        </div>
+    </form>
+</body>
 <script src="/socket.io/socket.io.js"></script>
     <script>
         const socket = io();

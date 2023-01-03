@@ -1,13 +1,18 @@
+body{
+    align-items: center;
+}
 form{
     background: transparent;
     padding: 5px;
-    position: fixed;
+    position: absolute;
     display: flex;
     bottom: 385px;
     left: 450px;
     right: 340px;
     margin: 0;
     border-color: transparent;
+    margin-left: auto;
+    margin-right: auto;
     
 }
 #input{
@@ -35,9 +40,8 @@ form{
     top:240px;
     /*height: 100vh;*/
     /*This part is important for centering*/
-    display: grid;
-    place-items: left;
-    margin-left: 320px;
+    left: 32%;
+    position: relative;
   }
   
   .typing-demo {
@@ -64,15 +68,13 @@ form{
     }
   }
 
-
-  
   .button {
     text-align: center;
     text-transform: uppercase;
     cursor: pointer;
     font-size: 20px;
     letter-spacing: 4px;
-    position: relative;
+    position: absolute;
     background-color: #9b59b6;
     border: none;
     color: white;
