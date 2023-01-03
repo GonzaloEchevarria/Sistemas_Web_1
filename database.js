@@ -12,12 +12,19 @@ db.serialize(function() {
     db.all("SELECT * FROM usuarios", function(err, rows) {
         console.log(rows);
       });
+
+      db.all("SELECT * FROM publicacion", function(err, rows) {
+        console.log(rows);
+      });
+     
      
     });
 
 db.comparePass = function(pass, hash, callback){
   bcrypt.compare(pass, hash, callback);
 }
+
+
 
 db.login=function(username, pass, callback){
   const bbdd= new sqlite3.Database('gacetilleros.db'); //abrir conexión
@@ -60,15 +67,6 @@ db.registroExiste =function(username,callback) {
     });}
 
 
-
-
-
-
-
-
-
-
-
 db.generateHash = function(pass, callback){
   bcrypt.hash(pass, 10, callback);
 }
@@ -87,7 +85,32 @@ db.register = function(username, pass, role, callback){
       
   });
 }
+db.newPublicacion = function(autor, titular, body, callback){
+   
+  const bbdd= new sqlite3.Database('gacetilleros.db');
+   bbdd.run("INSERT INTO publicacion (autor, titular, body) VALUES(?, ?, ?);",[autor, titular, body]);
+  
+   
+   if (callback) {
+        callback();
+    };
+}
 
+db.allPublicaciones= function(callback){
+  const bbdd = new sqlite3.Database('gacetilleros.db');
+  bbdd.all("SELECT * FROM publicacion", function(err, rows) {
+    bbdd.close();
+    
+    if (callback){
+      return callback(rows);
+    }
+  });
+}
+
+db.allPublicaciones(function(response){
+  console.log("--------");
+  console.log(response);
+})
 
 
 
