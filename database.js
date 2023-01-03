@@ -16,6 +16,10 @@ db.serialize(function() {
       db.all("SELECT * FROM publicacion", function(err, rows) {
         console.log(rows);
       });
+
+      db.all("SELECT * FROM contacto", function(err, rows) {
+        console.log(rows);
+      });
      
      
     });
@@ -89,8 +93,18 @@ db.newPublicacion = function(autor, titular, body, callback){
    
   const bbdd= new sqlite3.Database('gacetilleros.db');
    bbdd.run("INSERT INTO publicacion (autor, titular, body) VALUES(?, ?, ?);",[autor, titular, body]);
-  
+   bbdd.close();
    
+   if (callback) {
+        callback();
+    };
+}
+
+db.newContacto = function(nombre, email, mensaje, callback){
+   
+  const bbdd= new sqlite3.Database('gacetilleros.db');
+   bbdd.run("INSERT INTO contacto (nombre, email, mensaje) VALUES(?, ?, ?);",[nombre, email, mensaje]);
+   bbdd.close();
    if (callback) {
         callback();
     };
@@ -114,6 +128,9 @@ db.allPublicaciones(function(response){
 
 
 
+db.newContacto("D","d@gmial.com","hola",function(){
+  console.log('BBDD correct');
+ }); 
 
 //db.register('admin2', 'admin', "admin", function(){
  // console.log('BBDD correct');
