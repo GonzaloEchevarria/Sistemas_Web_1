@@ -90,15 +90,22 @@ db.register = function(username, pass, role, callback){
   });
 }
 db.newPublicacion = function(autor, titular, body, callback){
-   
+  console.log("voy a abrir la BBDD");
   const bbdd= new sqlite3.Database('gacetilleros.db');
-   bbdd.run("INSERT INTO publicacion (autor, titular, body) VALUES(?, ?, ?);",[autor, titular, body]);
-   bbdd.close();
-   
+   bbdd.run("INSERT INTO publicacion (autor, titular, body) VALUES(?, ?, ?);",[autor, titular, body],function(err,result){
+    let response="ok";
+    if (err){
+      response="error";
+    }
+    else{
+      console.log("¡Nueva publicación!");
+    }
+    bbdd.close();
    if (callback) {
-        callback();
+        return callback(response);
     };
-}
+   });
+   }
 
 
 

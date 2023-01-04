@@ -4,11 +4,13 @@
 </head>
 
 <body>
-    <form>      
-        <input name="name" id="titular" type="text" class="feedback-input" placeholder="Titular" required/>   
-        <textarea name="text" id="body" class="feedback-input" placeholder="Contenido de la noticia" required></textarea>
+    <form action="/publicacion" method="post">      
+        <input id="titular" name="titular" type="text" class="feedback-input" placeholder="Titular" required/>   
+        <textarea id="cuerpo" name="cuerpo" class="feedback-input" placeholder="Contenido de la noticia" required></textarea>
         <input type="submit" value="PUBLICAR"/>
     </form>
 </body>
-
+<script>
+    document.getElementById("botonIluminado").className='animation start-publicar';
+</script>
 <%- include("footer", {}) %>
