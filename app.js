@@ -11,13 +11,13 @@ const http = require("http");
 
 
 let contactRouter = require('./routes/contact');
-let indexRouter = require('./routes/index');
 let loginRouter = require('./routes/login');
 let restrictedRouter = require('./routes/restricted');
 let registroRouter = require('./routes/registro');
 let twitterRouter = require('./routes/twitter');
 let chatRouter = require('./routes/chat');
 let publicarRouter = require('./routes/publicacion');
+let tablonRouter = require('./routes/tablon');
 //let modificarRouter = require('./routes/modificarNoticia');
 
 
@@ -65,7 +65,6 @@ app.use(function(req, res, next){
   next();
 });
 
-app.use('/home', indexRouter);
 app.use('/contacto',contactRouter);
 app.use('/', loginRouter);
 app.use('/twitter', twitterRouter);
@@ -78,6 +77,7 @@ app.use('/logout', function(req, res, next){
 });
 app.use('/chat',restrict,chatRouter);
 app.use('/publicacion',publicarRouter);
+app.use('/tablon',tablonRouter);
 //app.use('/modificarNoticia',restrict,modificarRouter);
 
 
