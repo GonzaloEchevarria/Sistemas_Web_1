@@ -100,15 +100,27 @@ db.newPublicacion = function(autor, titular, body, callback){
     };
 }
 
+
+
 db.newContacto = function(nombre, email, mensaje, callback){
-   
   const bbdd= new sqlite3.Database('gacetilleros.db');
-   bbdd.run("INSERT INTO contacto (nombre, email, mensaje) VALUES(?, ?, ?);",[nombre, email, mensaje]);
-   bbdd.close();
+   bbdd.run("INSERT INTO contacto (nombre, email, mensaje) VALUES(?, ?, ?);",[nombre, email, mensaje],function(err,result){
+    let response="ok";
+    if (err){
+      response="error";
+    }
+    else{
+      console.log("¡Nuevo contacto!");
+    }
+    bbdd.close();
    if (callback) {
-        callback();
+        return callback(response);
     };
-}
+   }); }
+
+//  db.newContacto("W","$","prueba",function(){
+ //   console.log('BBDD correct');
+  // }); 
 
 db.allPublicaciones= function(callback){
   const bbdd = new sqlite3.Database('gacetilleros.db');

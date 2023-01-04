@@ -18,18 +18,24 @@
           <textarea class="message formEntry" id="mensaje" name="mensaje" placeholder="Mensaje" required></textarea>
           <input type="checkbox" class="termsConditions" value="Term">
           <label style="color: grey" for="terms"> I Accept the <span style="color: #0e3721">Terms of Use</span> & <span style="color: #0e3721">Privacy Policy</span>.</label><br>
-          <button class="submit formEntry" type="submit">Submit</button>
+          <button class="submit formEntry" onclick="success()" type="submit">Submit</button>
         </form>
       </div>
 
       <div class="container mt-5">
           <div class="row">
             <div class="col-lg-6 col-md-6 col-xs-12 col-sm-6">
-              <div class="alert alert_info"> <button aria-hidden="true" data-dismiss="alert" class="close" type="button">&times;</button> <strong>Info!</strong> </div>
-              <div class="alert alert_success"> <button aria-hidden="true" data-dismiss="alert" class="close" type="button">&times;</button> <strong>success!</strong> </div>
-              <div class="alert alert_warning"> <button aria-hidden="true" data-dismiss="alert" class="close" type="button">&times;</button> <strong>warning!</strong> </div>
-              <div class="alert alert_error"> <button aria-hidden="true" data-dismiss="alert" class="close" type="button">&times;</button> <strong>error!</strong> </div>
+              <!-- <div class="alert alert_info"> <button aria-hidden="true" data-dismiss="alert" class="close" type="button">&times;</button> <strong>Info!</strong> </div> -->
+              <div class="alert alert_success" id="enviado"> <button aria-hidden="true" data-dismiss="alert" class="close" type="button">&times;</button> <strong>success!</strong> </div>
+              <!-- <div class="alert alert_warning"> <button aria-hidden="true" data-dismiss="alert" class="close" type="button">&times;</button> <strong>warning!</strong> </div> -->
+              <!-- <div class="alert alert_error"> <button aria-hidden="true" data-dismiss="alert" class="close" type="button">&times;</button> <strong>error!</strong> </div> -->
           </div>
       </div>
 </body>
-<script>document.getElementById("botonIluminado").className='animation start-contact'</script>
+<script>
+document.getElementById("botonIluminado").className='animation start-contact';
+success=function(){
+  document.getElementsById("enviado").style.display="block";
+}
+</script>
+

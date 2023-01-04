@@ -8,19 +8,20 @@ router.get('/', function(req, res, next) {
 });
 router.post('/', function(req, res, next){
   
-  let nombre=req.body.wrapper.nombre;
+  let nombre=req.body.nombre;
   let email= req.body.email;
   let mensaje = req.body.mensaje;
   console.log("truño1"+nombre+email+mensaje);
   if (nombre!=undefined && email!=undefined && mensaje!=undefined){
     db.newContacto(nombre,email, mensaje,function(){
+      
       console.log("Contacto.");
       res.redirect("/contacto");
   })}
   else{
     console.log("truño"+nombre+email+mensaje);
   }
-
+  console.log("ADIOS");
   }
 
 
