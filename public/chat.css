@@ -27,10 +27,21 @@ form{
     overflow-y:scroll;
     max-height: 500px;
 }
+#cuadro::-webkit-scrollbar {
+  background-color: #2c3e50;
+}
+#cuadro::-webkit-scrollbar-thumb {
+  background-color: #1d5c9a;
+  border-radius: 18px;
+}
+
+#cuadro::-webkit-scrollbar-thumb:hover {
+  background-color: #ffff00;
+}
 #messages{
     list-style-type: none;
     text-align: center;
-    font-size: 30px;
+    font-size: 25px;
     font-family: monospace;
     color: white;
 }
@@ -73,7 +84,17 @@ form{
       border-color: transparent
     }
   }
-
+  .inp{
+    background-color:transparent; 
+    border-color: transparent; 
+    color: white; 
+    font-family: monospace;
+    font-size: 25px;
+    width: 500px;
+    height: auto;
+    margin-left: 10%;
+    position: static;
+  }
   .button {
     text-align: center;
     text-transform: uppercase;
@@ -92,6 +113,7 @@ form{
     border-radius: 4px;
     position:static;
     margin:auto;
+    margin-left: 10px;
     top: 240px;
   }
   

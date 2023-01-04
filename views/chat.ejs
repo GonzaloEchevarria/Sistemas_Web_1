@@ -1,11 +1,11 @@
 <%- include("header2", {}) %>
 <link rel="stylesheet" href="chat.css">
 
-<!-- <h1><%= title %></h1> -->
+
 <body>
     <br>
     <br>
-    <div class="wrapper">
+    <div class="wrapper" id="titulo">
         <div class="typing-demo">
         Chat
         </div>
@@ -13,14 +13,16 @@
 
 
     <form id="form">
-            <input id="input" placeholder="Escribe aquí..." style="background-color:transparent; border-color: transparent; color: white; font-family: monospace;font-size: 35px;">
+            <input id="input" class="inp" placeholder="Escribe aquí..." >
             <button class="button">Send</button>     
-        </form>
-        <div id="cuadro">
+    </form>
+    <div id="cuadro">
             <ul id="messages"></ul>
-        </div>
+    </div>
 
-    
+    <% if (rol==='redactor') { %>
+        <script>document.getElementById("titulo").style.marginLeft="27%"</script>
+    <% } %>
     
 </body>
 
