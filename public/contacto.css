@@ -89,6 +89,22 @@ body {
     background-color: #ebebeb;
     overflow: hidden;
     height: 10rem;
+    max-width: 420px;
+    max-height: 300px;
+    overflow-y: scroll;
+  }
+  .message::-webkit-scrollbar {
+    background-color: transparent;
+    width: 20px;
+  }
+  .message::-webkit-scrollbar-thumb {
+    background-color: #edce85;
+    border-radius: 18px;
+   
+  }
+  
+  .message::-webkit-scrollbar-thumb:hover {
+    background-color: #fcbc46;
   }
   
   .message:hover {
@@ -96,6 +112,7 @@ body {
     border-bottom: 5px solid #eedb0f;
     height: 12em;
     width: 380px;
+   
     transition: ease 0.5s;
   }
   
