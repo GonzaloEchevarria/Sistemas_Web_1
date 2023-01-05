@@ -91,7 +91,7 @@ body {
     height: 10rem;
     max-width: 420px;
     max-height: 300px;
-    overflow-y: scroll;
+    overflow-y: auto;
   }
   .message::-webkit-scrollbar {
     background-color: transparent;
