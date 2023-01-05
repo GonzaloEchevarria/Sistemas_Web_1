@@ -106,6 +106,10 @@ body {
   .message::-webkit-scrollbar-thumb:hover {
     background-color: #fcbc46;
   }
+  .message::-webkit-scrollbar-corner{
+    background-color: transparent;
+  
+  }
   
   .message:hover {
     /*border-bottom: 5px solid #0e3721;*/

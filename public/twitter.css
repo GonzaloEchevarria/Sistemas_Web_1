@@ -17,6 +17,10 @@
   ::-webkit-scrollbar-thumb:hover {
     background-color: #ffff00;
   }
+  ::-webkit-scrollbar-corner{
+    background-color: transparent;
+  
+  }
 
 
   @import url(https://fonts.googleapis.com/css?family=Exo+2:200i);
