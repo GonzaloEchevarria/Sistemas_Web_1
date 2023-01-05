@@ -108,7 +108,7 @@ h2 {
 
 .book-content {
 	transform: scale(0.9) translateY(30px);
-	background-color: green !important;
+	background-color: rgba(169, 169, 169, 0.633) !important;
 	transition: all 0.3s 1s;
 	overflow-y: scroll;
     
@@ -119,19 +119,42 @@ h2 {
 	opacity: 0;
 	transition: all 0.3s 0.3s;
 }
-
 h3 {
+	display: flex;
+	position: relative;
+	font-size: 38px;
+	text-transform: uppercase;
+	font-family: 'Gambetta', serif;
+	letter-spacing: -2px;
+	transition: 700ms ease;
+	font-variation-settings: "wght" 311;
+	margin-bottom: 0.8rem;
+	color: PaleGoldenRod;
+	outline: none;
+	text-align: left;
+  }
+  
+h3:hover {
+	font-variation-settings: "wght" 582; 
+	letter-spacing: 3px;
+	cursor:default;
+  }
+
+
+/*h3 {
 	padding: 30px;
-}
+}*/
 
 p {
 	padding: 0px 30px 10px 30px;
 	position: relative;
 	text-align: justify;
-	font-size: 14px;
-    
-    
+	font-size: 14px;   
 }
+p:hover{
+	cursor:default;
+}
+
 
 .book-cover > div {
 	transition: opacity 0s 0.6s;
@@ -152,4 +175,50 @@ p {
 .book:hover > .book-content h3,
 .book:hover > .book-content p {
 	opacity: 1;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:600&display=swap');
+
+span{
+  position: relative;
+  display: inline-flex;
+  width: 50px !important;
+  height: 25px;
+  margin:0px 15px;
+  perspective: 1000px;
+}
+span a{
+  font-size: 15px;
+  letter-spacing: 1px;
+  transform-style: preserve-3d;
+  transform: translateZ(-25px);
+  transition: transform .25s;
+  font-family: 'Montserrat', sans-serif;
+ 
+}
+span a:before,
+span a:after{
+  position: absolute;
+  content: "COMENTARIOS";
+  height: 45px;
+  width: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 5px solid black;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+span a:before{
+  color: #fff;
+  background: #000;
+  transform: rotateY(0deg) translateZ(25px);
+}
+span a:after{
+  color: #000;
+  transform: rotateX(90deg) translateZ(25px);
+ 
+}
+span a:hover{
+  transform: translateZ(-25px) rotateX(-90deg);
 }
