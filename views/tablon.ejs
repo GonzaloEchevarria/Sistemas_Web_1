@@ -15,9 +15,15 @@
 			<!--<h3>An Excerpt from Chapter One</h3> -->
             <div id="cuadro">
                 <ul id="publicaciones">
-					<% console.log("777777777777777777777"+publicaciones1)%>
+					<p> <%= publicaciones[0].id  %> </p>
 					
-
+					<% for (let i=0; i<publicaciones.length ; i++) { %>
+						<br><br><br>
+						<h3><%= publicaciones[i].titular %></h3>
+						<br>
+						<p><%= publicaciones[i].body %></p><br>
+						<span><a href="#"></a></span>
+					<% } %>
 					<!-- <span><a href="#"></a></span> -->
 				</ul>
 				
@@ -26,9 +32,9 @@
         </div>
 	</div>
 </main>
-<script type="text/javascript" src="/tablon_operacion.js"></script>
-
-<!--<script>
+<!-- <script type="text/javascript" src="/tablon_operacion.js"></script> -->
+<!---
+<script>
 	const list = document.getElementById("publicaciones");
 	const titulo= document.createElement('h3');
 	const br= document.createElement('br');
@@ -44,11 +50,9 @@
 	comentar.appendChild(a);
 	list.appendChild(comentar);
 	titulo.innerHTML='PRUEBA 2';
-	cuerpo.innerHTML='cuerpo 2';
+	cuerpo.innerHTML= publicaciones[0].id;
 
-	const db = require('../database');
-	console.log
-	db.allPublicaciones(function(publicacion){
+	/*
 	
 		for (let i=0;i<publicacion.length;i++){
 			const titulo= document.createElement('h3');
@@ -68,6 +72,6 @@
 			cuerpo.innerHTML=publicacion[i].body;
 		}
 		console.log("acabadoo");
-	})
+	})*/
 
 </script>-->

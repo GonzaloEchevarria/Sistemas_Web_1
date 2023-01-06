@@ -2,13 +2,19 @@ const { response } = require('express');
 const express = require('express');
 const db = require('../database');
 const router = express.Router();
-const publicaciones2 = db.allPublicaciones(function(response){
-  console.log("+++++++++++++++++++++"+response[0].id);
+let publicaciones="";
+
+db.allPublicaciones(function(response){
+  publicaciones=response;
 })
+ 
+
 
 router.get('/', function(req, res, next) {
-  res.render('tablon', { title: 'Tablón', user: req.session.user, rol:req.session.rol, publicaciones1: publicaciones2});
-});
+      res.render('tablon', { title: 'Tablón', user: req.session.user, rol:req.session.rol, publicaciones: publicaciones}); });
+
+  
+
 
 
 module.exports = router;

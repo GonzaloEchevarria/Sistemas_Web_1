@@ -14,7 +14,7 @@ const list = document.getElementById("publicaciones");
 	comentar.appendChild(a);
 	list.appendChild(comentar);
 	titulo.innerHTML='PRUEBA 2';
-	cuerpo.innerHTML=publicaciones1.innerHTML;
+	cuerpo.innerHTML=publicaciones[0].id;
 
 	
 
