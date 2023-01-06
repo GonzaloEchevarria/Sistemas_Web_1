@@ -20,6 +20,10 @@ db.serialize(function() {
       db.all("SELECT * FROM contacto", function(err, rows) {
         console.log(rows);
       });
+
+      db.all("SELECT * FROM comentarios", function(err, rows) {
+        console.log(rows);
+      });
      
      
     });
@@ -139,6 +143,39 @@ db.allPublicaciones= function(callback){
     }
   });
 }
+
+db.allComentarios= function(callback){
+  const bbdd = new sqlite3.Database('gacetilleros.db');
+  bbdd.all("SELECT * FROM comentarios", function(err, rows) {
+    bbdd.close();
+    
+    if (callback){
+      return callback(rows);
+    }
+  });
+}
+
+
+db.comentar = function(id, autor, body, callback){
+  console.log("------");
+  const bbdd= new sqlite3.Database('gacetilleros.db');
+   bbdd.run("INSERT INTO comentarios (id_noticia, autor, body) VALUES(?, ?, ?);",[id, autor, body],function(err,result){
+    console.log("COMENT");
+    let response="ok";
+    if (err){
+      response="error";
+    }
+    else{
+      console.log("¡Nuevo comentario!");
+    }
+    bbdd.close();
+   if (callback) {
+        return callback(response);
+    };
+   }); }
+
+
+
 
 db.allPublicaciones(function(response){
   console.log("--------");

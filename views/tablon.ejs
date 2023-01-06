@@ -2,76 +2,56 @@
 <head>
     <link rel="stylesheet" href="tablon.css">
 </head>
+<body>
 <main>
 	<div class="book">
 		<div class="book-cover">
 			<div>
-				<h1>Mrs. Dalloway</h1>
+				<h1>Noticias</h1>
 				<div class="separator"></div>
-				<h2>by Virginia Woolf</h2>
+				<h2>by Gacetilleros</h2>
 			</div>
 		</div>
 		<div class="book-content">
 			<!--<h3>An Excerpt from Chapter One</h3> -->
-            <div id="cuadro">
-                <ul id="publicaciones">
-					<p> <%= publicaciones[0].id  %> </p>
-					
+           
+			<div id="cuadro">
+				<br>
+                 <span style="margin-left: 500px;"><a onclick="mostrarComentarios()"></a></span>
+				<ul id="publicaciones">
+					<br><br>
 					<% for (let i=0; i<publicaciones.length ; i++) { %>
-						<br><br><br>
 						<h3><%= publicaciones[i].titular %></h3>
 						<br>
 						<p><%= publicaciones[i].body %></p><br>
-						<span><a href="#"></a></span>
+						<div id="mostrarComentarios" >
+							<div id="comentar">
+								<% for (let j=0; j<comentarios.length ; j++) { %>
+									<% if(comentarios[j].id_noticia === publicaciones[i].id){ %>
+										<%= comentarios[j].body %>
+									<% }} %>
+							</div>
+							<form action="/tablon" method="post">
+								<input id="inputComentario" name="inputComentario" type="text"></input>
+								<input id="idPub" name="idPub" style="display: none;" value=<%= publicaciones[i].id %>>
+								<button type="sumbit" id="botonComentar">COMENTAR</button>
+							</form>
+							<br><br>
+						</div>
 					<% } %>
-					<!-- <span><a href="#"></a></span> -->
 				</ul>
+				<br><br>
 				
             </div>
 			
         </div>
 	</div>
 </main>
-<!-- <script type="text/javascript" src="/tablon_operacion.js"></script> -->
-<!---
+</body>
 <script>
-	const list = document.getElementById("publicaciones");
-	const titulo= document.createElement('h3');
-	const br= document.createElement('br');
-	const cuerpo= document.createElement('p');
-	const comentar= document.createElement('span');
-	const a= document.createElement('a');
-	list.appendChild(titulo);
-	list.appendChild(br);
-	list.appendChild(br);
-	list.appendChild(br);
-	list.appendChild(br);
-	list.appendChild(cuerpo);
-	comentar.appendChild(a);
-	list.appendChild(comentar);
-	titulo.innerHTML='PRUEBA 2';
-	cuerpo.innerHTML= publicaciones[0].id;
+function mostrarComentarios(){
+	document.getElementById('mostrarComentarios').style.display="inline";
+}
+</script>
 
-	/*
-	
-		for (let i=0;i<publicacion.length;i++){
-			const titulo= document.createElement('h3');
-			const br= document.createElement('br');
-			const cuerpo= document.createElement('p');
-			const comentar= document.createElement('span');
-			const a= document.createElement('a');
-			list.appendChild(titulo);
-			list.appendChild(br);
-			list.appendChild(br);
-			list.appendChild(br);
-			list.appendChild(br);
-			list.appendChild(cuerpo);
-			comentar.appendChild(a);
-			list.appendChild(comentar);
-			titulo.innerHTML=publicacion[i].titular;
-			cuerpo.innerHTML=publicacion[i].body;
-		}
-		console.log("acabadoo");
-	})*/
 
-</script>-->

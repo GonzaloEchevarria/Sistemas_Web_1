@@ -222,3 +222,55 @@ span a:after{
 span a:hover{
   transform: translateZ(-25px) rotateX(-90deg);
 }
+
+#mostrarComentarios{
+	/*max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s  ease;*/
+}
+
+#comentar{
+	display: inline-flex; 
+	width: 580px; 
+	height: 100px ; 
+	font-size: 18px;
+	background-color: beige;
+	border: black 2px solid ;
+	border-radius: 5px;
+	overflow-y: auto;
+}
+.book-content::-webkit-scrollbar {
+    background-color: rgba(169, 169, 169, 0.633);
+	width: 16px;
+  }
+  .book-content::-webkit-scrollbar-thumb {
+    background-color: #b68c49;
+    border-radius: 18px;
+  }
+  
+  .book-content::-webkit-scrollbar-thumb:hover {
+    background-color: #e0a342;
+  }
+  .book-content::-webkit-scrollbar-corner{
+    background-color: transparent;
+  
+  }
+
+#inputComentario{
+	width: 482px;
+	min-height: 30px;
+	height: auto;
+}
+
+#botonComentar{
+	display: inline;
+	height: 30px;
+	width: 93px;
+	border-radius: 4px;
+	border: #b11509;
+	background-color: #b68c49;
+	color: #fff;
+}
+#botonComentar:hover{
+	background-color: #e0a342;
+}
