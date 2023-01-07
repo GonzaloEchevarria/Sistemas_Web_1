@@ -182,6 +182,22 @@ db.allPublicaciones(function(response){
   console.log(response);
 })
 
+db.allPublicacionesDeX= function(username,callback){
+  const bbdd = new sqlite3.Database('gacetilleros.db');
+  bbdd.all("SELECT * FROM publicacion WHERE autor=?", [username], function(err, rows) {
+    bbdd.close();
+    
+    if (callback){
+      return callback(rows);
+    }
+  });
+}
+
+db.allPublicacionesDeX("prueba2",function(response){
+  console.log("///////////////////////////");
+  console.log(response);
+})
+
 
 
 //db.newContacto("D","d@gmial.com","hola",function(){

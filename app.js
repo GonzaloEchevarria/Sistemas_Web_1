@@ -18,7 +18,7 @@ let twitterRouter = require('./routes/twitter');
 let chatRouter = require('./routes/chat');
 let publicarRouter = require('./routes/publicacion');
 let tablonRouter = require('./routes/tablon');
-//let modificarRouter = require('./routes/modificarNoticia');
+let modificarRouter = require('./routes/modificar');
 
 
 let app = express();
@@ -78,7 +78,7 @@ app.use('/logout', function(req, res, next){
 app.use('/chat',restrict,chatRouter);
 app.use('/publicacion',publicarRouter);
 app.use('/tablon',tablonRouter);
-//app.use('/modificarNoticia',restrict,modificarRouter);
+app.use('/modificar',restrict,modificarRouter);
 
 
 function restrict(req, res, next){

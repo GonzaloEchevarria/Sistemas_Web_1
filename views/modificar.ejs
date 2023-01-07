@@ -1,0 +1,24 @@
+<%- include("header2", {}) %>
+
+<head>
+    <link rel="stylesheet" href="modificar.css">
+</head>
+<body>
+   <div id="noticias">
+        <ul id="publicaciones">
+            <% for (let i=0; i<publicaciones.length ; i++) { %>
+                <h2><%= publicaciones[i].titular%></h2>
+                <textarea class=<%= publicaciones[i].id %> id="cuerpo" name="cuerpo" readonly required><%= publicaciones[i].body%></textarea>
+                <button type="button" onclick=modificar() id="botonModificar" class="botones">MODIFICAR</button>
+                <button type="sumbit" id="botonguardar" class="botones">GUARDAR</button>
+            <% } %>
+        </ul>
+
+   </div>
+</body>
+<script>
+    function modificar(){
+        document.getElementById("cuerpo").style.backgroundColor="white";
+
+    }
+</script>
