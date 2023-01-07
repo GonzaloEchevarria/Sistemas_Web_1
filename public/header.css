@@ -34,6 +34,7 @@ a:nth-child(1) {
 	width: 100px;
 }
 a:nth-child(2) {
+	
 	width: 100px;
 }
 a:nth-child(3) {
@@ -58,19 +59,19 @@ a:nth-child(9) {
 	width: 100px;
 }
 
-nav .start-home, a:nth-child(1):hover~.animation {
-	width: 100px;
+nav .start-tablon, a:nth-child(1):hover~.animation {
+	width: 96px;
 	left: 0;
 	background-color: #1abc9c;
 }
 nav .start-restricted, a:nth-child(2):hover~.animation {
-	width: 105px;
-	left: 100px;
+	width: 108px;
+	left: 97px;
 	background-color: #e74c3c;
 }
 nav .start-twitter, a:nth-child(3):hover~.animation {
-	width: 100px;
-	left: 200px;
+	width: 80px;
+	left: 210px;
 	background-color: #3498db;
 }
 nav .start-chat, a:nth-child(4):hover~.animation {
