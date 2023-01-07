@@ -2,23 +2,24 @@ const { response } = require('express');
 const express = require('express');
 const db = require('../database');
 const router = express.Router();
-let publicaciones="";
 
-db.allPublicaciones(function(response){
-  publicaciones=response;
-})
+//let publicaciones="";
+//db.allPublicaciones(function(response){
+  //publicaciones=response;
+//})
 
-let comentarios2="";
-  db.allComentarios(function(response){
-        comentarios2=response;
-        console.log(response[0].body)
-        console.log("Add");
-      });
+//let comentarios2="";
+  //db.allComentarios(function(response){
+    //    comentarios2=response;
+      //});
  
 
-
 router.get('/', function(req, res, next) {
-      res.render('tablon', { title: 'Tablón', user: req.session.user, rol:req.session.rol, publicaciones: publicaciones, comentarios:comentarios2}); 
+  db.allPublicaciones(function(publicaciones){
+    db.allComentarios(function(comments){
+      res.render('tablon', { title: 'Tablón', user: req.session.user, rol:req.session.rol, publicaciones: publicaciones, comentarios:comments});  
+    })
+  })     
     });
 
 router.post('/', function(req, res, next){
@@ -29,9 +30,6 @@ router.post('/', function(req, res, next){
       })
 
   });
-
-  
-
 
 
 module.exports = router;
