@@ -20,7 +20,6 @@ form{
     top:240px;
 }
 #cuadro{
-    /*border: 3px solid #F3CC07;*/
     width: 580px;
     margin: auto;
     border-radius: 7px;
@@ -56,9 +55,6 @@ form{
 
 
 .wrapper {
-    
-    /*height: 100vh;*/
-    /*This part is important for centering*/
     margin-left: 32%;
     position:relative;
     

@@ -1,6 +1,5 @@
 #noticias{
-    align-self: center;
-    
+    align-self: center;  
     max-width: 525px;
     height: 450px;
     background-color:beige ;
@@ -13,7 +12,7 @@
     margin-right: auto;
     padding-top: 5px;
     padding-top: 5px;
-    /*transform: translate(-10%, 0%);*/
+
 }
 
 body{
