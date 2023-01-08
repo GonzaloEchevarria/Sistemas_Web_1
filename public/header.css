@@ -92,17 +92,18 @@ nav .start-about, a:nth-child(6):hover~.animation {
 nav .start-logout, a:nth-child(7):hover~.animation {
 	width: 100px;
 	left: 600px;
-	background-color: #e5f50683;
+	background-color: #e74c3c;
+
 }
 nav .start-publicar, a:nth-child(8):hover~.animation {
 	width: 100px;
 	left: 700px;
-	background-color: #e74c3c;
+	background-color: #e5f50683;
 }
 nav .start-modificar, a:nth-child(9):hover~.animation {
 	width: 100px;
 	left: 800px;
-	background-color: #3498db;
+	background-color: #fb2c97c8;
 }
 
 
