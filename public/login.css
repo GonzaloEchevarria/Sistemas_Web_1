@@ -15,7 +15,7 @@ body{
 .box{
     position: absolute;
     margin: auto;
-    left: 40% ;
+    left: 37% ;
     width: 380px;
     height: 420px;
     background: #1c1c1c;
@@ -151,11 +151,12 @@ input[type="submit"]{
     color: aliceblue;
     font-weight: bold;
     text-align: center;
-    margin: 20px;
     padding: 20px;
+    left: 6px;
     width: 290px;
     height: 60px;
     top: 550px;
+    
 }
 
 @import url("https://fonts.googleapis.com/css?family=Raleway");
@@ -168,7 +169,7 @@ input[type="submit"]{
     color: var(--glow-color);
     cursor: pointer;
     top: 570px;
-    left: 42%;
+    left: 40%;
     padding: 0.25em 0.85em;
     border: 0.15em solid var(--glow-color);
     border-radius: 0.45em;
