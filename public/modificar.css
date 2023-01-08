@@ -24,6 +24,7 @@ body{
     overflow-y: auto;
     background-color: #D4FCFC;
     border-radius: 2px;
+    cursor: default;
 }
 .botones{
 	display: inline;
