@@ -111,6 +111,41 @@ db.newPublicacion = function(autor, titular, body, callback){
    });
    }
 
+   db.updateNoticia = function(id, body, callback){
+    const bbdd= new sqlite3.Database('gacetilleros.db');
+     bbdd.run("UPDATE  publicacion SET body=? WHERE id=?;",[body, id],function(err,result){
+      let response="ok";
+      if (err){
+        response="error";
+      }
+      else{
+        console.log("¡Nuevo noticia!");
+      }
+      bbdd.close();
+     if (callback) {
+          return callback(response);
+      };
+     }); }
+    
+     db.deleteNoticia = function(id, callback){
+      const bbdd= new sqlite3.Database('gacetilleros.db');
+       bbdd.run("DELETE FROM publicacion  WHERE id=?;",[id],function(err,result){
+        let response="ok";
+        if (err){
+          response="error";
+        }
+        else{
+          console.log("ELIMINADA noticia!");
+        }
+        bbdd.close();
+       if (callback) {
+            return callback(response);
+        };
+       }); }
+    
+     
+
+   
 
 
 db.newContacto = function(nombre, email, mensaje, callback){

@@ -14,11 +14,12 @@
 body{
     margin: auto;
 }
-#cuerpo{
+.cuerpo{
     direction: ltr;
     font-size: 15px;
     text-align: justify;
     width: 600px;
+    max-width: 600px;
     height: 200px;
     overflow-y: auto;
     background-color: #D4FCFC;

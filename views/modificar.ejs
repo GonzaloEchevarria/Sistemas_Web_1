@@ -6,19 +6,36 @@
 <body>
    <div id="noticias">
         <ul id="publicaciones">
+            
             <% for (let i=0; i<publicaciones.length ; i++) { %>
                 <h2><%= publicaciones[i].titular%></h2>
-                <textarea class=<%= publicaciones[i].id %> id="cuerpo" name="cuerpo" readonly required><%= publicaciones[i].body%></textarea>
-                <button type="button" onclick=modificar() id="botonModificar" class="botones">MODIFICAR</button>
-                <button type="sumbit" id="botonguardar" class="botones">GUARDAR</button>
+                <form action="/modificar" method="post">
+                    <textarea  name="cuerpo" class="cuerpo" readonly required id=<%= publicaciones[i].id%>><%= publicaciones[i].body%></textarea>
+                    <button type="button" onclick="modificar(this.getAttribute('name'))"  id="botonModificar" class="botones" name=<%= publicaciones[i].id%>>MODIFICAR</button>
+                    <input   name="body" style="display: none;" id=<%= 'body'+publicaciones[i].id %> > 
+                    <input id="idPub" name="idPub" style="display: none;" value=<%= publicaciones[i].id %>>
+                    <button type="sumbit" id="botonguardar" onclick="guardar(this.getAttribute('name'))" class="botones" name=<%= publicaciones[i].id%>>GUARDAR</button>
+                    <button type="sumbit" id="botoneliminar" onclick="eliminar(this.getAttribute('name'))" class="botones" name=<%= publicaciones[i].id%>>ELIMINAR</button>
+                </form>
             <% } %>
         </ul>
 
    </div>
 </body>
 <script>
-    function modificar(){
-        document.getElementById("cuerpo").style.backgroundColor="white";
+   function modificar(id){
+        document.getElementById(id).style.background="white";
+        document.getElementById(id).readOnly=false;
+        
+   }
 
-    }
+   function guardar(id){
+    let cuerpo= document.getElementById(id).value;
+    document.getElementById("body"+id).value=cuerpo;
+   }
+
+   function eliminar(id){
+    document.getElementById("body"+id).value="eliminar";
+   }
+
 </script>
