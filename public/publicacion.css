@@ -80,14 +80,14 @@ textarea {
     background-color: #34CD12;
     border-radius: 10px;
     box-shadow: 0 0 10px rgb(253, 253, 253);
-    font-size: 18px;
+    font-size: 22px;
     color: black;
     font-weight: bold;
     text-align: center;
-    padding: 20px;
-    left: 6px;
+    padding: 15px;
+    left: 480px;
     width: 290px;
     height: 60px;
-    top: 550px;
+    top: 5px;
     
 }
