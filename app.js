@@ -64,21 +64,19 @@ app.use(function(req, res, next){
   next();
 });
 
-app.use('/contacto',contactRouter);
+app.use('/contacto', restrict,contactRouter);
 app.use('/', loginRouter);
-app.use('/twitter', twitterRouter);
-app.use('/registro',registroRouter);
-//app.use('/restricted', restrict, restrictedRouter);
+app.use('/twitter', restrict,twitterRouter);
+app.use('/registro',restictRegistro,registroRouter);
 app.use('/logout', function(req, res, next){
   req.session.destroy(function(){
     res.redirect("/");
   })
 });
 app.use('/chat',restrict,chatRouter);
-app.use('/publicacion',publicarRouter);
+app.use('/publicacion',restrictRedactor,publicarRouter);
 app.use('/tablon',restrict,tablonRouter);
-app.use('/modificar',restrict,modificarRouter);
-
+app.use('/modificar',restrictModificar,modificarRouter);
 
 function restrict(req, res, next){
   if(req.session.user){
@@ -88,6 +86,32 @@ function restrict(req, res, next){
     res.redirect("/");
   }
 }
+
+function restictRegistro(req, res, next){
+  if(req.session.user){
+    res.redirect("/tablon");
+  } else {
+    next();
+  }
+}
+
+function restrictRedactor(req, res, next){
+  if(req.session.rol==="redactor"){
+    next();
+  } else {
+    req.session.error = "Unauthorized access";
+    res.redirect("/");
+  }
+}
+function restrictModificar(req, res, next){
+  if(req.session.rol==="redactor" || req.session.rol==="admin"){
+    next();
+  } else {
+    req.session.error = "Unauthorized access";
+    res.redirect("/");
+  }
+}
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
