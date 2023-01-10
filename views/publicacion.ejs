@@ -9,8 +9,10 @@
         <textarea id="cuerpo" name="cuerpo" class="feedback-input" placeholder="Contenido de la noticia" required></textarea>
         <input type="submit" value="PUBLICAR"/>
     </form>
+    <div class="message">
+        <p> <%- message %></p>
+    </div>
 </body>
 <script>
     document.getElementById("botonIluminado").className='animation start-publicar';
 </script>
-<%- include("footer", {}) %>

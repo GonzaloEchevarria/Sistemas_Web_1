@@ -74,3 +74,20 @@ textarea {
   ::-webkit-scrollbar-thumb:hover {
     background-color: #CC6666;
   }
+
+  .message {
+    position: relative;
+    background-color: #34CD12;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgb(253, 253, 253);
+    font-size: 18px;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    padding: 20px;
+    left: 6px;
+    width: 290px;
+    height: 60px;
+    top: 550px;
+    
+}

@@ -15,8 +15,8 @@ router.post('/', function(req, res, next){
 
     db.newPublicacion(user,titular,cuerpo,function(response){
         console.log(response);
+        req.session.message="Noticia Publicada!";
         res.redirect("/publicacion");
-        console.log("noticia añadida");
     })    
 });
 
