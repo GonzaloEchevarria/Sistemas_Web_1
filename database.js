@@ -84,7 +84,6 @@ db.register = function(username, pass, role, callback){
     db.generateHash(pass, function(err, hash){
     const bbdd= new sqlite3.Database('gacetilleros.db');
      bbdd.run("INSERT INTO usuarios (username, password, rol) VALUES(?, ?, ?);",[username,hash,role]);
-     array.push({username,pass,role});
 
      bbdd.close();
      if (callback) {

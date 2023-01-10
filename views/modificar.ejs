@@ -7,6 +7,9 @@
     <br><br>
    <div id="noticias">
         <ul id="publicaciones">
+            <% if (publicaciones.length===0){%>
+                <p style="color: black; text-align: left; width: 200px;">PUBLICA NOTICIAS</p>
+            <% } %>
             
             <% for (let i=0; i<publicaciones.length ; i++) { %>
                 <h2><%= publicaciones[i].titular%></h2>
