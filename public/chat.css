@@ -6,7 +6,7 @@ form{
     padding: 5px;
     position: absolute;
     display: flex;
-    bottom: 100px;
+    bottom: 25px;
     left: 450px;
     right: 340px;
     margin: 0;
@@ -20,11 +20,11 @@ form{
     top:240px;
 }
 #cuadro{
-    width: 580px;
+    width: 435px;
     margin: auto;
     border-radius: 7px;
     overflow-y:scroll;
-    max-height: 370px;
+    max-height: 277.5px;
     text-align: center;
 }
 #cuadro::-webkit-scrollbar {
@@ -44,11 +44,11 @@ form{
     font-size: 20px;
     font-family: monospace;
     color: white;
-    width: 500px;
+    width: 375px;
 }
 #messages > li:nth-child(odd){
     background: #9b59b6;
-    width: 500px;
+    width: 375px;
     text-align: center;
     
 }
@@ -104,7 +104,7 @@ form{
     border: none;
     color: white;
     padding: 8px;
-    width: 200px;
+    width: 150px;
     text-align: center;
     transition-duration: 0.4s;
     overflow: hidden;
@@ -127,7 +127,6 @@ form{
     background: #1abc9c;
     display: block;
     position: absolute;
-    /*padding-top: 300%;*/
     padding-left: 350%;
     margin-left: -20px !important;
     margin-top: -120%;

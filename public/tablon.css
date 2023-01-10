@@ -216,16 +216,9 @@ span a:after{
 span a:hover{
   transform: translateZ(-25px) rotateX(-90deg);
 }
-
-#mostrarComentarios{
-	/*max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.5s  ease;*/
-}
-
 #comentar{
 	display: inline-flex; 
-	width: 480px; 
+	width: 360px; 
 	height: 100px ; 
 	font-size: 18px;
 	background-color: beige;
@@ -251,7 +244,7 @@ span a:hover{
   }
 
 #inputComentario{
-	width: 380px;
+	width: 285px;
 	min-height: 30px;
 	height: auto;
 }
@@ -259,11 +252,12 @@ span a:hover{
 #botonComentar{
 	display: inline;
 	height: 30px;
-	width: 93px;
+	width: 70px;
 	border-radius: 4px;
 	border: #b11509;
 	background-color: #b68c49;
 	color: #fff;
+	font-size: 10px;
 }
 #botonComentar:hover{
 	background-color: #e0a342;

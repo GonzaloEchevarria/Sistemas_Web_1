@@ -17,14 +17,19 @@
 	<a href="/chat">Chat</a>
 	<a href="/contacto">Contact</a>
 	<a href="/logout" >Logout</a>
-	<% if (rol==='redactor' || rol==='admin'){ %>
-		<% if (rol==='redactor'){ %>
-		<a href="/publicacion">Publicar</a> <% } %>
+	<% if (rol==='redactor'){ %>
+		<a href="/modificar">Modificar</a>
+		<a href="/publicacion">Publicar</a>
+		<script>
+			document.getElementById("menu").style.width='700px';
+		</script>
+	<% } %>
+	<% if (rol==='admin'){ %>
 		<a href="/modificar">Modificar</a>
 		<script>
-			document.getElementById("menu").style.width='900px';
+			document.getElementById("menu").style.width='600px';
 		</script>
-		<% } %>
+	<% } %>
 	
 	
     
