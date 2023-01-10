@@ -13,8 +13,7 @@ router.post('/', function(req, res, next){
   let mensaje = req.body.mensaje;
   if (nombre!=undefined && email!=undefined && mensaje!=undefined){
     db.newContacto(nombre,email, mensaje,function(){
-      
-      console.log("Contacto.");
+      req.session.message="Le contactaremos!";
       res.redirect("/contacto");
   })}
   
