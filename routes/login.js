@@ -13,9 +13,7 @@ router.get('/', function(req, res, next) {
 router.post('/', function(req, res, next){
     let user = req.body.user;   
     db.registroExiste(user,function(validacion){
-        console.log("VAL:"+validacion);
         if(validacion===false){
-            console.log("es falso");
             req.session.rol=undefined;
             req.session.error="Incorrect user or password";
             res.redirect("/");
