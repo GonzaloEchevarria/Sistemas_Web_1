@@ -76,7 +76,7 @@ app.use('/logout', function(req, res, next){
 });
 app.use('/chat',restrict,chatRouter);
 app.use('/publicacion',publicarRouter);
-app.use('/tablon',tablonRouter);
+app.use('/tablon',restrict,tablonRouter);
 app.use('/modificar',restrict,modificarRouter);
 
 
