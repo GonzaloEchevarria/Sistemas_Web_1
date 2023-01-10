@@ -24,14 +24,15 @@
 						<br>
 						<p><%= publicaciones[i].body %></p> <p style="text-align: right;"><%= "by " + publicaciones[i].autor%> </p><br>
 						<div id="mostrarComentarios" >
-							<div id="comentar">
+							<div id="comentar" style="text-align: justify;">
 								<% for (let j=0; j<comentarios.length ; j++) { %>
 									<% if(comentarios[j].id_noticia === publicaciones[i].id){ %>
-										<%= comentarios[j].autor + ": " + comentarios[j].body %><br>
+										<%= "--> "+ comentarios[j].autor + ": " + comentarios[j].body %><br><br>
 									<% }} %>
-							</div>
+							</div><br><br>
+
 							<form action="/tablon" method="post">
-								<input id="inputComentario" name="inputComentario" type="text" required></input>
+								<input id="inputComentario" placeholder="Introduce aqui el comentario..." style="border-radius: 3px; background-color: cornsilk; border: 2px solid cornsilk;" name="inputComentario" type="text" required></input>
 								<input id="idPub" name="idPub" style="display: none;" value=<%= publicaciones[i].id %>>
 								<button type="sumbit" id="botonComentar">COMENTAR</button>
 							</form>
