@@ -70,3 +70,22 @@ body{
     background-color: transparent;
   
   }
+
+
+
+.cuerpo::-webkit-scrollbar {
+    background-color: transparent;
+	width: 6px;
+  }
+.cuerpo::-webkit-scrollbar-thumb {
+    background-color: #b68c49;
+    border-radius: 18px;
+  }
+  
+.cuerpo::-webkit-scrollbar-thumb:hover {
+    background-color: #e0a342;
+  }
+.cuerpo::-webkit-scrollbar-corner{
+    background-color: transparent;
+  
+  }
