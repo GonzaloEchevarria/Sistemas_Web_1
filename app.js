@@ -12,7 +12,6 @@ const http = require("http");
 
 let contactRouter = require('./routes/contact');
 let loginRouter = require('./routes/login');
-let restrictedRouter = require('./routes/restricted');
 let registroRouter = require('./routes/registro');
 let twitterRouter = require('./routes/twitter');
 let chatRouter = require('./routes/chat');
@@ -69,7 +68,7 @@ app.use('/contacto',contactRouter);
 app.use('/', loginRouter);
 app.use('/twitter', twitterRouter);
 app.use('/registro',registroRouter);
-app.use('/restricted', restrict, restrictedRouter);
+//app.use('/restricted', restrict, restrictedRouter);
 app.use('/logout', function(req, res, next){
   req.session.destroy(function(){
     res.redirect("/");

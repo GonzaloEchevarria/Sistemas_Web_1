@@ -17,7 +17,7 @@ router.post('/', function(req, res, next){
             req.session.user = user;
             db.obtenerRol(user,function(rol){
                 req.session.rol=rol;
-                res.redirect("/restricted");
+                res.redirect("/tablon");
             })
             
         } else {

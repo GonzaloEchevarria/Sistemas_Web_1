@@ -28,8 +28,7 @@ router.post('/', function(req, res, next){
           db.register(user,password,rol, function(){
               req.session.user = user;
               req.session.rol=rol;
-              //req.session.message = "Register CORRECT!";
-              res.redirect("/restricted");
+              res.redirect("/tablon");
           });
       }
         else{
