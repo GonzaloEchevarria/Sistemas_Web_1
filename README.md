@@ -5,7 +5,7 @@ GACETILLEROS
 > Diego Herrero Lalana y Gonzalo Echevarría de Vicente
 
 ## Descripción del proyectro
-> La aplicación que se va a realizar se trata de un foro de noticias, en el cual, los usuarios accederán 
+> La aplicación se trata de un foro de noticias, en el cual, los usuarios accederán 
 a la aplicación web con el fin de consultar nuevas noticias publicadas por otros usuarios, así 
 como, publicar sus propias noticias. 
 De esta forma, lo que se buscará es que los usuarios puedan publicar noticias/artículos en el foro 
