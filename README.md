@@ -29,7 +29,7 @@ cd Sistemas_Web_1
 npm ci 
 ```
 
-### Arrancar la aplicación web
+### Arrancar la aplicación web (el puerto por defecto es el 3000)
 ```
 npm start
 ```
