@@ -13,7 +13,7 @@
           <div class="pageTitle title">Contacto </div>
           <div class="secondaryTitle title">Rellena los siguientes campos.</div>
           <input type="text" id="nombre" name="nombre" class="name formEntry" placeholder="Nombre"  required/>
-          <input type="text" id="email" name="email" class="email formEntry" placeholder="Email" required/>
+          <input type="email" id="email" name="email" class="email formEntry" placeholder="Email" required/>
           <textarea class="message formEntry" id="mensaje" name="mensaje" placeholder="Mensaje" required></textarea>
           <button class="submit formEntry" type="submit">Submit</button>
         </form>
@@ -21,7 +21,7 @@
     <% if (message) { %>
       <div class="mensaje">
           <p> <%- message %></p>
-      </div>
+      </div><br><br>
     <% } %>
 
 </body>

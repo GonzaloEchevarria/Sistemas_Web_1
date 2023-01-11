@@ -134,7 +134,7 @@
   }
   .mensaje {
     position: relative;
-    background-color: #34CD12;
+    background-color: #59d23e;
     border-radius: 10px;
     box-shadow: 0 0 10px rgb(253, 253, 253);
     font-size: 22px;
@@ -142,7 +142,7 @@
     font-weight: bold;
     text-align: center;
     padding: 15px;
-    left: 480px;
+    left: 540px;
     width: 290px;
     height: 60px;
     top: 560px;
