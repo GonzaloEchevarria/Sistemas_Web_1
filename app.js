@@ -73,6 +73,10 @@ app.use('/logout', function(req, res, next){
     res.redirect("/");
   })
 });
+app.use('/forgot', function(req, res, next){
+  req.session.error="Te jodes por gilipollas";
+  res.redirect("/");
+});
 app.use('/chat',restrict,chatRouter);
 app.use('/publicacion',restrictRedactor,publicarRouter);
 app.use('/tablon',restrict,tablonRouter);
