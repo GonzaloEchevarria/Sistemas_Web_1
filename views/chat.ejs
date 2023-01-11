@@ -11,7 +11,7 @@
 
 
     <form id="form">
-            <input id="input" class="inp" placeholder="Escribe aquí..." >
+            <input id="input" class="inp" name=<%= user %> placeholder="Escribe aquí..." >
             <button class="button">Send</button>     
     </form>
     <div id="cuadro">
@@ -29,12 +29,13 @@
         const socket = io();
         const form = document.getElementById("form");
         const input = document.getElementById("input");
+        const user= input.getAttribute('name');
         const messages = document.getElementById("messages");
 
         form.addEventListener('submit', function(e){
             e.preventDefault();
             if(input.value){
-                socket.emit("chat",input.value);
+                socket.emit("chat", user+ ": "+ input.value);
                 input.value = "";
             }
         });
