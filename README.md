@@ -31,10 +31,20 @@ npm ci
 
 ### Arrancar la aplicación web
 ```
-npm start 
+npm start
 ```
 
 ### Acceder a nuestro navegador favorito y buscar en la URL
 ```
 http://localhost:3000
+```
+
+### Arrancar la aplicación web con un puerto selecionado 
+```
+PORT=xxxx npm start
+```
+
+### Acceder a nuestro navegador favorito y buscar en la URL
+```
+http://localhost:XXXX
 ```
