@@ -34,8 +34,11 @@ body{
     font-size: 15px;
     text-align: justify;
     width: 450px;
+    min-width: 450px;
     max-width: 460px;
     height: 150px;
+    max-height: 150px;
+    min-height: 150px;
     overflow-y: auto;
     background-color: #D4FCFC;
     border-radius: 2px;
