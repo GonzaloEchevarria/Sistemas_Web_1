@@ -24,7 +24,7 @@ form{
     margin: auto;
     border-radius: 7px;
     overflow-y:scroll;
-    max-height: 277.5px;
+    max-height: 400px;
     text-align: center;
 }
 #cuadro::-webkit-scrollbar {
